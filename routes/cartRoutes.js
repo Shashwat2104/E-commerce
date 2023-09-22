@@ -145,43 +145,42 @@ const CartRouter = express.Router();
  *         description: Unauthorized - JWT token required.
  */
 
+// Create or add a product to the cart
 CartRouter.post("/addtocart/:productId", auth, async (req, res) => {
   try {
     const userId = req.userData.userId;
     const productId = req.params.productId;
 
-    // Find the user's cart
     let cart = await CartModel.findOne({ user: userId });
 
     if (!cart) {
-      // If the cart doesn't exist, create a new one
       cart = new CartModel({
         user: userId,
-        products: [{ product: productId, quantity: 1 }], // Add product with quantity 1
+        products: [{ product: productId, quantity: 1 }],
       });
 
       await cart.save();
 
-      res.status(201).json({ message: "Product added to cart successfully" });
-    } else {
-      // Check if the product is already in the cart or not
-      const productIndex = cart.products.findIndex(
-        (item) => item.product.toString() === productId
-      );
-
-      if (productIndex !== -1) {
-        res.status(200).json({ message: "Product is already in cart" });
-      } else {
-        cart.products.push({ product: productId, quantity: 1 });
-        await cart.save();
-        res.status(201).json({ message: "Product added to cart successfully" });
-      }
+      return res
+        .status(201)
+        .json({ message: "Product added to cart successfully" });
     }
+
+    const productIndex = cart.products.findIndex(
+      (item) => item.product.toString() === productId
+    );
+
+    if (productIndex !== -1) {
+      return res.status(200).json({ message: "Product is already in cart" });
+    }
+
+    cart.products.push({ product: productId, quantity: 1 });
+    await cart.save();
+    res.status(201).json({ message: "Product added to cart successfully" });
   } catch (error) {
     res.status(500).json({ message: "An error occurred" });
   }
 });
-
 CartRouter.delete("/prod-removetocart/:productId", auth, async (req, res) => {
   try {
     const userId = req.userData.userId; // Get the user ID from the auth middleware
