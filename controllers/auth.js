@@ -4,7 +4,7 @@ require("dotenv").config();
 const auth = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
-    const decodedToken = jwt.verify(token, process.env.Secret_Key);
+    const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
     req.userData = { userId: decodedToken.userId, email: decodedToken.email };
     next(); // Move to the next middleware
   } catch (error) {
