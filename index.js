@@ -1,5 +1,5 @@
 const express = require("express");
-require("dotenv").config();
+const dotenv = require("dotenv");
 const userRouter = require("./routes/UserRoutes");
 const { connection } = require("./config/db");
 const ProductRouter = require("./routes/ProductRoutes");
@@ -8,6 +8,12 @@ const OrderRouter = require("./routes/OrderRoutes");
 const swaggerUi = require("swagger-ui-express");
 const app = express();
 const specs = require("./swagger");
+const { limiter } = require("./Middlewares/RateLimiter");
+
+// Load environment variables
+dotenv.config();
+
+app.use(limiter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
