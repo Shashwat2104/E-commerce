@@ -1,7 +1,7 @@
 const express = require("express");
 const { auth } = require("../controllers/auth");
-const OrderModel = require("../models/orderModel");
-const CartModel = require("../models/cartModel");
+const OrderModel = require("../models/OrderModel");
+const CartModel = require("../models/CartModel");
 const OrderRouter = express.Router();
 
 /**
