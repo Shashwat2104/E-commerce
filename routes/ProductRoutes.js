@@ -22,7 +22,7 @@ const ProductRouter = express.Router();
 
 /**
  * @swagger
- * /products/add-prod:
+ * /products/addproduct:
  *   post:
  *     summary: Add a new product
  *     description: Add a new product with title, image, price, category, and availability.
@@ -56,7 +56,7 @@ const ProductRouter = express.Router();
  */
 
 // Create a new product
-ProductRouter.post("/addproducts", auth, async (req, res) => {
+ProductRouter.post("/addproduct", auth, async (req, res) => {
   try {
     const { title, image, price, category, availability } = req.body;
 
@@ -78,7 +78,7 @@ ProductRouter.post("/addproducts", auth, async (req, res) => {
 
 /**
  * @swagger
- * /products/prod-category:
+ * /products/productscategory:
  *   get:
  *     summary: Get product categories
  *     description: Retrieve distinct product categories.
@@ -111,7 +111,7 @@ ProductRouter.get("/productscategory", async (req, res) => {
 
 /**
  * @swagger
- * /products/products:
+ * /products/allproducts:
  *   get:
  *     summary: Get products
  *     description: Retrieve a list of products. You can filter by category using the `category` query parameter.

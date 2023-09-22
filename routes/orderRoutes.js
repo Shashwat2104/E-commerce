@@ -13,7 +13,7 @@ const OrderRouter = express.Router();
 
 /**
  * @swagger
- * /orders/order-place:
+ * /orders/placeorder:
  *   post:
  *     summary: Place a new order
  *     description: Place a new order with items from the user's cart.
@@ -33,7 +33,7 @@ const OrderRouter = express.Router();
 
 /**
  * @swagger
- * /orders/order-details:
+ * /orders/orderdetails:
  *   get:
  *     summary: Get order details
  *     description: Retrieve order details for the authenticated user.

@@ -13,7 +13,7 @@ const CartRouter = express.Router();
 
 /**
  * @swagger
- * /cart/addtocart/{productId}:
+ * /cart/add/{productId}:
  *   post:
  *     summary: Add a product to the cart
  *     description: Add a product to the user's cart.
@@ -40,7 +40,7 @@ const CartRouter = express.Router();
 
 /**
  * @swagger
- * /cart/prod-removetocart/{productId}:
+ * /cart/remove/{productId}:
  *   delete:
  *     summary: Remove a product from the cart
  *     description: Remove a product from the user's cart.
@@ -67,7 +67,7 @@ const CartRouter = express.Router();
 
 /**
  * @swagger
- * /cart/cart:
+ * /cart/allcartitems:
  *   get:
  *     summary: Get the user's cart
  *     description: Retrieve the user's cart with added products.
@@ -93,7 +93,7 @@ const CartRouter = express.Router();
 
 /**
  * @swagger
- * /cart/qty-increase/{productId}:
+ * /cart/incquantity/{productId}:
  *   post:
  *     summary: Increase the quantity of a product in the cart
  *     description: Increase the quantity of a product in the user's cart.
@@ -120,7 +120,7 @@ const CartRouter = express.Router();
 
 /**
  * @swagger
- * /cart/qty-decrease/{productId}:
+ * /cart/decquantity/{productId}:
  *   post:
  *     summary: Decrease the quantity of a product in the cart
  *     description: Decrease the quantity of a product in the user's cart.
@@ -213,7 +213,7 @@ CartRouter.delete("/remove/:productId", auth, async (req, res) => {
   }
 });
 
-CartRouter.get("/cart", auth, async (req, res) => {
+CartRouter.get("/allcartitems", auth, async (req, res) => {
   try {
     const userId = req.userData.userId; // Get the user ID from the auth middleware
 

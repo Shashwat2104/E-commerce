@@ -13,7 +13,7 @@ const { limiter } = require("./Middlewares/RateLimiter");
 // Load environment variables
 dotenv.config();
 
-app.use(limiter);
+// app.use(limiter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
