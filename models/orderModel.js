@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const orderPlacedSchema = new mongoose.Schema({
+const OrderPlacedSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   items: [
     {
@@ -16,6 +16,6 @@ const orderPlacedSchema = new mongoose.Schema({
   totalOrderValue: { type: Number, required: true },
 });
 
-const OrderModel = mongoose.model("Order", orderPlacedSchema);
+const OrderModel = mongoose.model("Order", OrderPlacedSchema);
 
 module.exports = OrderModel;

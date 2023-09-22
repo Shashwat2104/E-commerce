@@ -92,10 +92,10 @@ userRouter.post("/register", async (req, res) => {
     if (userExist) {
       return res
         .status(409)
-        .json({ msg: "User Already Registered with this email" });
+        .json({ msg: "User Already Registered With This Email" });
     }
 
-    const hashPassword = await bcrypt.hash(password, 7);
+    const hashPassword = await bcrypt.hash(password, 9);
 
     const user = new UserModel({
       name,
@@ -106,7 +106,7 @@ userRouter.post("/register", async (req, res) => {
     await user.save();
     res.status(200).json({ msg: "User Registered Successfully" });
   } catch (error) {
-    res.status(500).json({ msg: "Something went wrong" });
+    res.status(500).json({ msg: "Something Went Wrong" });
   }
 });
 
@@ -116,12 +116,12 @@ userRouter.post("/login", async (req, res) => {
 
     const user = await UserModel.findOne({ email });
     if (!user) {
-      return res.status(401).json({ msg: "User not Found!" });
+      return res.status(401).json({ msg: "User Not Found!" });
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(401).json({ message: "Authentication failed" });
+      return res.status(401).json({ message: "Authentication Failed" });
     }
 
     const token = jwt.sign(
@@ -131,7 +131,7 @@ userRouter.post("/login", async (req, res) => {
     );
     res.status(200).json({ msg: "User Login Successfully", Token: token });
   } catch (error) {
-    res.status(500).json({ msg: "Something went wrong" });
+    res.status(500).json({ msg: "Something Went Wrong" });
   }
 });
 
