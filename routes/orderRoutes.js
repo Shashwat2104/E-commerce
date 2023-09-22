@@ -87,7 +87,7 @@ const OrderRouter = express.Router();
  */
 
 // Place a new order
-OrderRouter.post("/order-place", auth, async (req, res) => {
+OrderRouter.post("/placeorder", auth, async (req, res) => {
   try {
     const userId = req.userData.userId;
 
@@ -126,7 +126,7 @@ OrderRouter.post("/order-place", auth, async (req, res) => {
   }
 });
 
-OrderRouter.get("/order-details", auth, async (req, res) => {
+OrderRouter.get("/orderdetails", auth, async (req, res) => {
   try {
     const userId = req.userData.userId;
 
@@ -136,7 +136,7 @@ OrderRouter.get("/order-details", auth, async (req, res) => {
 
     res.status(200).json(orders);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred" });
+    res.status(500).json({ message: "An Error Occurred" });
   }
 });
 
@@ -151,12 +151,12 @@ OrderRouter.get("/order/:orderId", auth, async (req, res) => {
     }).populate("items.product");
 
     if (!order) {
-      return res.status(404).json({ message: "Order not found" });
+      return res.status(404).json({ message: "Order Not Found" });
     }
 
     res.status(200).json(order);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred" });
+    res.status(500).json({ message: "An Error Occurred" });
   }
 });
 

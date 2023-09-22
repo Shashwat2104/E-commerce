@@ -136,7 +136,7 @@ ProductRouter.get("/productscategory", async (req, res) => {
  */
 
 // Get products with optional category filter
-ProductRouter.get("/products", async (req, res) => {
+ProductRouter.get("/allproducts", async (req, res) => {
   try {
     const category = req.query.category;
     let query = {};
@@ -177,7 +177,7 @@ ProductRouter.get("/products", async (req, res) => {
  */
 
 // Get a product by ID
-ProductRouter.get("/products/:id", async (req, res) => {
+ProductRouter.get("/product/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const product = await ProductModel.findById(id);
