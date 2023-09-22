@@ -1,6 +1,6 @@
 const express = require("express");
 const { auth } = require("../controllers/auth");
-const { ProductModel } = require("../models/prodModel");
+const ProductModel = require("../models/prodModel");
 const ProductRouter = express.Router();
 
 /**
@@ -192,4 +192,4 @@ ProductRouter.get("/products/:id", async (req, res) => {
   }
 });
 
-module.exports = { ProductRouter };
+module.exports =  ProductRouter ;

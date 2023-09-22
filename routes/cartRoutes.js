@@ -1,6 +1,6 @@
 const express = require("express");
 const { auth } = require("../controllers/auth");
-const { CartModel } = require("../models/cartModel");
+const CartModel = require("../models/cartModel");
 
 const CartRouter = express.Router();
 
@@ -181,6 +181,7 @@ CartRouter.post("/addtocart/:productId", auth, async (req, res) => {
     res.status(500).json({ message: "An error occurred" });
   }
 });
+
 CartRouter.delete("/prod-removetocart/:productId", auth, async (req, res) => {
   try {
     const userId = req.userData.userId; // Get the user ID from the auth middleware
@@ -295,4 +296,4 @@ CartRouter.post("/qty-decrease/:productId", auth, async (req, res) => {
   }
 });
 
-module.exports = { CartRouter };
+module.exports = CartRouter;
