@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { UserModel } = require("../models/UserModel");
+const UserModel = require("../models/UserModel");
 require("dotenv").config();
 const userRouter = express.Router();
 
@@ -110,8 +110,6 @@ userRouter.post("/register", async (req, res) => {
   }
 });
 
-
-
 userRouter.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -137,5 +135,4 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
-
-module.exports = { userRouter };
+module.exports = userRouter;

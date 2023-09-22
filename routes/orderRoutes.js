@@ -1,7 +1,7 @@
 const express = require("express");
 const { auth } = require("../controllers/auth");
-const { OrderModel } = require("../models/orderModel");
-const { CartModel } = require("../models/cartModel");
+const OrderModel = require("../models/orderModel");
+const CartModel = require("../models/cartModel");
 const OrderRouter = express.Router();
 
 /**
@@ -159,4 +159,4 @@ OrderRouter.get("/order/:orderId", auth, async (req, res) => {
   }
 });
 
-module.exports = { OrderRouter };
+module.exports = OrderRouter;
