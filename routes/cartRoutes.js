@@ -182,7 +182,7 @@ CartRouter.post("/addtocart/:productId", auth, async (req, res) => {
   }
 });
 
-CartRouter.delete("/prod-removetocart/:productId", auth, async (req, res) => {
+CartRouter.delete("/removefromcart/:productId", auth, async (req, res) => {
   try {
     const userId = req.userData.userId; // Get the user ID from the auth middleware
     const productId = req.params.productId; // Get the product ID from the route parameter
@@ -233,7 +233,7 @@ CartRouter.get("/cart", auth, async (req, res) => {
 });
 
 // Route to increase the quantity of a product in the cart
-CartRouter.post("/qty-increase/:productId", auth, async (req, res) => {
+CartRouter.post("/increasequantity/:productId", auth, async (req, res) => {
   try {
     const userId = req.userData.userId; // Get the user ID from the auth middleware
     const productId = req.params.productId; // Get the product ID from the route parameter
@@ -263,7 +263,7 @@ CartRouter.post("/qty-increase/:productId", auth, async (req, res) => {
 });
 
 // Route to decrease the quantity of a product in the cart
-CartRouter.post("/qty-decrease/:productId", auth, async (req, res) => {
+CartRouter.post("/decreasequantity/:productId", auth, async (req, res) => {
   try {
     const userId = req.userData.userId; // Get the user ID from the auth middleware
     const productId = req.params.productId; // Get the product ID from the route parameter
