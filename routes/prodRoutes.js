@@ -56,7 +56,7 @@ const ProductRouter = express.Router();
  */
 
 // Create a new product
-ProductRouter.post("/add-prod", auth, async (req, res) => {
+ProductRouter.post("/addproducts", auth, async (req, res) => {
   try {
     const { title, image, price, category, availability } = req.body;
 
@@ -100,7 +100,7 @@ ProductRouter.post("/add-prod", auth, async (req, res) => {
  */
 
 // Get product categories
-ProductRouter.get("/prod-category", async (req, res) => {
+ProductRouter.get("/productscategory", async (req, res) => {
   try {
     const productCategories = await ProductModel.distinct("category");
     res.status(200).json({ categories: productCategories });
