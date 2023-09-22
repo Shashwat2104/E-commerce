@@ -86,6 +86,7 @@ const OrderRouter = express.Router();
  *         description: Unauthorized - JWT token required.
  */
 
+// Place a new order
 OrderRouter.post("/order-place", auth, async (req, res) => {
   try {
     const userId = req.userData.userId;
@@ -95,7 +96,7 @@ OrderRouter.post("/order-place", auth, async (req, res) => {
     );
 
     if (!cart) {
-      return res.status(404).json({ message: "Unable to found cart" });
+      return res.status(404).json({ message: "Unable to find cart" });
     }
 
     const totalOrderValue = cart.products.reduce(
@@ -117,11 +118,11 @@ OrderRouter.post("/order-place", auth, async (req, res) => {
     cart.products = [];
     await cart.save();
 
-    res.status(201).json({ message: " Your order placed successfully" });
+    res.status(201).json({ message: "Your order placed successfully" });
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Unable to place order something went wrong" });
+      .json({ message: "Unable to place order, something went wrong" });
   }
 });
 
