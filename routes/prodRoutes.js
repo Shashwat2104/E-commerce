@@ -99,7 +99,6 @@ ProductRouter.post("/add-prod", auth, async (req, res) => {
  *         description: Something went wrong.
  */
 
-
 // Get product categories
 ProductRouter.get("/prod-category", async (req, res) => {
   try {
@@ -153,7 +152,6 @@ ProductRouter.get("/products", async (req, res) => {
   }
 });
 
-
 /**
  * @swagger
  * /products/products/{id}:
@@ -178,13 +176,17 @@ ProductRouter.get("/products", async (req, res) => {
  *         description: Something went wrong.
  */
 
+// Get a product by ID
 ProductRouter.get("/products/:id", async (req, res) => {
   try {
-    let id = req.params.id;
+    const id = req.params.id;
+    const product = await ProductModel.findById(id);
 
-    const products = await ProductModel.find({ _id: id });
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
 
-    res.status(200).json(products);
+    res.status(200).json(product);
   } catch (error) {
     res.status(500).json({ message: "An error occurred" });
   }
