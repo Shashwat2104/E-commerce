@@ -28,6 +28,6 @@ app.listen(PORT, async () => {
     await connection;
     console.log(`Connected to port ${PORT}`);
   } catch (error) {
-    console.error(error.message);
+    console.error("Error connecting to MongoDB:", error.message);
   }
 });
