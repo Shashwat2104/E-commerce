@@ -63,8 +63,8 @@ Before getting started, make sure you have the following installed:
    
 2. Navigate to the project directory:
    ```
-   cd Ecommerce-Api
-   npm init -y
+   cd E-commerce
+   npm-i
    ```
    
 3. Install dependencies:
@@ -74,7 +74,7 @@ Before getting started, make sure you have the following installed:
 
 4. Application Start
    ```
-   node index.js
+   npm run server
    ```
 
 
