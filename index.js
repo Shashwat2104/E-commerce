@@ -1,11 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const userRouter = require("./routes/UserRoutes");
+const userRouter = require("./routes/userRoutes");
 const { connection } = require("./config/db");
-const ProductRouter = require("./routes/ProductRoutes");
+const ProductRouter = require("./routes/productRoutes");
 // const CartRouter = require("./routes/CartRoutes");
 // CartRouter
-const OrderRouter = require("./routes/OrderRoutes");
+const OrderRouter = require("./routes/orderRoutes");
 const swaggerUi = require("swagger-ui-express");
 const app = express();
 const specs = require("./swagger");
