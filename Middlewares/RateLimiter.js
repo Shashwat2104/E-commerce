@@ -3,8 +3,8 @@
 const { rateLimit } = require("express-rate-limit");
 
 const limiter = rateLimit({
-  max: 2, //no. of req users can make with in time
-  windowMs: 60000, // time frame in (ms) = 1 Minute
+  max: 45, //no. of req users can make with in time
+  windowMs: 6000, // time frame in (ms) = 1 Minute
 });
 
 module.exports = { limiter };

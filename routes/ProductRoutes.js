@@ -154,7 +154,7 @@ ProductRouter.get("/allproducts", async (req, res) => {
 
 /**
  * @swagger
- * /products/products/{id}:
+ * /products/product/{id}:
  *   get:
  *     summary: Get a product by ID
  *     description: Retrieve a specific product by its ID.
