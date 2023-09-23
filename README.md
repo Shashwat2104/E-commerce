@@ -1,7 +1,9 @@
-# Ecommerce API
+# Ecommerce API [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-# Overview
+# Overview 
 This project will deliver a comprehensive e-commerce API set that enables seamless product and category management, user authentication, secure cart management, and order processing. The integration of MongoDB as the database and token management system ensures efficient data storage and user authentication with minimal server-side setup.
+
+
 
 ## Backend Deploy
 https://triveous-4qqx.onrender.com/
@@ -30,6 +32,8 @@ https://drive.google.com
 - Product management: Add, retrieve, and search products by category.
 - Cart management: Add, remove, and update product quantities in the cart.
 - Order processing: Place orders and retrieve order history.
+
+
 
 ## Technologies Used
 
@@ -114,27 +118,43 @@ API RATE LIMIT used for the amount of time and no.of req valid for your applicat
 middleware --> express-rate-limit
 
 ##### Example Which I set in this assignment: 
- - max: 2, //no. of req users can make within the time
- - windowMs: 60000  // time frame in (ms)
+ - max: 6, //no. of req users can make within the time
+ - windowMs: 10000  // time frame in (ms)
 
-After 60000ms you got the Error: "Too many requests, please try again later" with a 429 status code if you try to make more than 2 requests.
-##### So Finally you can make 2 requests in 1 Minute.
+After 10000ms you get the Error: "Too many requests, please try again later" with a 429 status code if you try to make more than 6 requests.
+##### So Finally you can make 6 requests in 10 seconds.
 ## API Documentation
 ### User-swagger
 
-![users-swagger](https://github.com/himanshu60/Ecommerce-API/assets/65457075/d9a43f6d-7365-4e43-8404-4f9e8b41ff3e)
+![users-swagger](https://github.com/Shashwat2104/mock-6fe/assets/115514170/693d7e53-c146-469d-96bb-9a98f2f50cc4)
 
 ### Products-swagger
 
-![product-swagger](https://github.com/himanshu60/Ecommerce-API/assets/65457075/3b2ea569-67e0-47da-960a-f1c4e57e2d9e)
+![product-swagger](https://github.com/Shashwat2104/mock-6fe/assets/115514170/86103179-21d3-400a-a5eb-c9c43e516c89)
 
 ### Cart-swagger
 
-![cart-swagger](https://github.com/himanshu60/Ecommerce-API/assets/65457075/a1516508-8dd2-4a19-a95d-b06a4196c738)
+![cart-swagger](https://github.com/Shashwat2104/mock-6fe/assets/115514170/f34e1e80-7e53-4e81-95e4-b92fedefa447)
 
 ### order-swagger
-![order-swagger](https://github.com/himanshu60/Ecommerce-API/assets/65457075/ced3481f-0600-4554-b4f7-1eecc0af0e75)
-
+![order-swagger](https://github.com/Shashwat2104/mock-6fe/assets/115514170/881749b4-24c9-49aa-9d56-fc3764f5f4eb)
 
 
 For detailed API documentation, visit the Swagger Documentation.
+
+## Contributing
+
+We welcome contributions from the community! Check out our [Contributing Guidelines](CONTRIBUTING.md) to get involved.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+We'd like to thank all of our contributors and supporters who have helped make Fanztar a reality.
+
+## Contact
+
+For any inquiries or feedback, please contact us at [shashwatmahender2104@gmail.com](mailto:your@email.com).   
+
