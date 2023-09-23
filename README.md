@@ -12,7 +12,7 @@ https://triveous-4qqx.onrender.com/
 https://triveous-4qqx.onrender.com/api-docs/
 
 # Video Demonstration
-https://drive.google.com
+https://drive.google.com/file/d/1-B6a4FcCNC8vKLc0MmpfNY7O4FKURIR1/view?usp=sharing
 
 ## Table of Contents
 
