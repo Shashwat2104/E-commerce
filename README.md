@@ -1,6 +1,7 @@
-<h1 align="center">Triveous Ecommerce Backend</h1> [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+#  <h1 align="center">Triveous Ecommerce Backend</h1>
 
-# Overview 
+
+# Overview  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 This project will deliver a comprehensive e-commerce API set that enables seamless product and category management, user authentication, secure cart management, and order processing. The integration of MongoDB as the database and token management system ensures efficient data storage and user authentication with minimal server-side setup.
 
 
@@ -157,4 +158,7 @@ We'd like to thank all of our contributors and supporters who have helped make F
 ## Contact
 
 For any inquiries or feedback, please contact us at [shashwatmahender2104@gmail.com](mailto:your@email.com).   
+---
+
+<h1 align="center">✨Thank You✨</h1>
 
