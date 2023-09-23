@@ -54,7 +54,7 @@ Before getting started, make sure you have the following installed:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/himanshu60/Ecommerce-Api.git
+   git clone https://github.com/Shashwat2104/E-commerce.git
    ```
    
 2. Navigate to the project directory:
