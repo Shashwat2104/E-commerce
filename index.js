@@ -3,21 +3,19 @@ const dotenv = require("dotenv");
 const userRouter = require("./routes/UserRoutes");
 const { connection } = require("./config/db");
 const ProductRouter = require("./routes/prodRoutesjs");
-// const CartRouter = require("./routes/CartRoutes");
-// CartRouter
 const OrderRouter = require("./routes/orderRoutes");
 const swaggerUi = require("swagger-ui-express");
 const app = express();
 const specs = require("./swagger");
 const { limiter } = require("./Middlewares/RateLimiter");
 const CartRouter = require("./routes/cartRoutes");
-// const CartRouter = require("./routes/cartRoutes");
-CartRouter;
+
+
 
 // Load environment variables
 dotenv.config();
 
-// app.use(limiter);
+app.use(limiter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
