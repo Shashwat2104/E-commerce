@@ -192,4 +192,4 @@ ProductRouter.get("/product/:id", async (req, res) => {
   }
 });
 
-module.exports = ProductRouter;
+module.exports = { ProductRouter };

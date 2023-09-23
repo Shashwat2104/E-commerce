@@ -4,10 +4,10 @@
 This project will deliver a comprehensive e-commerce API set that enables seamless product and category management, user authentication, secure cart management, and order processing. The integration of MongoDB as the database and token management system ensures efficient data storage and user authentication with minimal server-side setup.
 
 ## Backend Deploy
-https:
+https://triveous-4qqx.onrender.com/
 
 ## Swagger UI
-https:api-docs/
+https://triveous-4qqx.onrender.com/api-docs/
 
 # Video Demonstration
 https://drive.google.com
