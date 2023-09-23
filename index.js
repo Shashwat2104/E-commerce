@@ -3,12 +3,14 @@ const dotenv = require("dotenv");
 const userRouter = require("./routes/UserRoutes");
 const { connection } = require("./config/db");
 const ProductRouter = require("./routes/ProductRoutes");
-const CartRouter = require("./routes/CartRoutes");
+// const CartRouter = require("./routes/CartRoutes");
+// CartRouter
 const OrderRouter = require("./routes/OrderRoutes");
 const swaggerUi = require("swagger-ui-express");
 const app = express();
 const specs = require("./swagger");
 const { limiter } = require("./Middlewares/RateLimiter");
+const CartRouter = require("./routes/CartRoutes");
 
 // Load environment variables
 dotenv.config();
