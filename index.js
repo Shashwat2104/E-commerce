@@ -10,7 +10,9 @@ const swaggerUi = require("swagger-ui-express");
 const app = express();
 const specs = require("./swagger");
 const { limiter } = require("./Middlewares/RateLimiter");
-const CartRouter = require("./routes/CartRoutes");
+const CartRouter = require("./routes/cartRoutes");
+// const CartRouter = require("./routes/cartRoutes");
+CartRouter
 
 // Load environment variables
 dotenv.config();
