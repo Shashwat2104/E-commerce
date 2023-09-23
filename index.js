@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const userRouter = require("./routes/UserRoutes");
 const { connection } = require("./config/db");
-const ProductRouter = require("./routes/productRoutes");
+const ProductRouter = require("./routes/prodRoutesjs");
 // const CartRouter = require("./routes/CartRoutes");
 // CartRouter
 const OrderRouter = require("./routes/orderRoutes");
@@ -12,7 +12,7 @@ const specs = require("./swagger");
 const { limiter } = require("./Middlewares/RateLimiter");
 const CartRouter = require("./routes/cartRoutes");
 // const CartRouter = require("./routes/cartRoutes");
-CartRouter
+CartRouter;
 
 // Load environment variables
 dotenv.config();
